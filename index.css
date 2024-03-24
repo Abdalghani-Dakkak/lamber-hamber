@@ -1,0 +1,137 @@
+:root {
+  --main-color: linear-gradient(150deg, #af4cd7, #584cd7);
+  --secondary-color: #7b70ee;
+  --body-color: linear-gradient(315deg, #ffffff, #cac6f8);
+  --error-color: #830000cc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  background-image: var(--body-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* for firefox scroll */
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color);
+  scrollbar-gutter: stable;
+  /* for firefox scroll */
+}
+
+/* for scroll */
+::-webkit-scrollbar {
+  width: 2px;
+  max-height: 50%;
+  height: 50%;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+/* for scroll */
+
+button,
+select {
+  cursor: pointer;
+}
+
+select option {
+  color: #000;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+form {
+  background: var(--main-color);
+  border-radius: 20px;
+}
+
+form input::placeholder {
+  color: #fff;
+}
+
+form input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+form input[type="tel"] {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+form button[type="submit"] {
+  transition: 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background: var(--secondary-color) !important;
+}
+
+.error-messages {
+  color: var(--error-color);
+  text-align: start;
+}
+
+.error-status {
+  color: var(--error-color);
+}
+
+.error-btn {
+  background: none;
+  border: 2px solid var(--error-color);
+  color: var(--error-color);
+  transition: 0.3s;
+}
+
+.error-btn:hover {
+  background-color: #ef000055;
+}
+
+@media (max-width: 450px) {
+  .navbar-brand {
+    font-size: 20px !important;
+  }
+  .menu-btn {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 16px !important;
+  }
+}
+
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  border-color: #584cd7 !important;
+  color: #584cd7;
+}
+
+.sections {
+  background: #cac6f8;
+}
+
+.section {
+  transition: 0.3s;
+}
+
+.section:hover,
+.section.active {
+  background: var(--main-color);
+  color: #fff;
+}
