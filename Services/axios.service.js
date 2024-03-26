@@ -11,7 +11,8 @@ const instanceAxios = axios.create({
 
 const get = async (url, token) => {
   let res = {};
-  if (token) instanceAxios.defaults.headers["Authorization"] = token;
+  if (token)
+    instanceAxios.defaults.headers.Authorization = "Bearer " + token;
 
   await instanceAxios
     .get(url)
@@ -43,7 +44,8 @@ const post = async (url, body, token, isMultiPart = false) => {
   if (isMultiPart)
     instanceAxios.defaults.headers["Content-Type"] = "multipart/form-data";
 
-  if (token) instanceAxios.defaults.headers["Authorization"] = token;
+  if (token)
+    instanceAxios.defaults.headers.Authorization = "Bearer " + token;
 
   await instanceAxios
     .post(url, body)
